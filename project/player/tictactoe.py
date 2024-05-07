@@ -3,7 +3,6 @@ This module contains the Player classes for Tic Tac Toe game.
 TODO: Implement the MinimaxPlayer class.
 * Note: You should read the game logic in project/game.py to familiarize yourself with the environment.
 """
-
 import random
 import math
 from typing import List
