@@ -1,1 +1,4 @@
-# COMP-2050 project
+# Artificial Intelligence projects
+These are the two challenging projects I designed for the Artificial Intelligence course at VinUniversity. In these two projects, students are required to design various AI algorithms that beat the programmed bots in two classic board games: Tic-Tac-Toe and Gomoku. In Gomoku, the programmed bots have 4 levels of intelligence, from beginner to master. A full score requires the students to design agents that beat the master bot. There are also designed test cases to test the decision-making abilities of the agents. 
+
+For more information, please refer to [Tic Tac Toe](Tic%20Tac%20Toe%20AI.pdf) and [Gomoku](Gomoku%20AI.pdf).
