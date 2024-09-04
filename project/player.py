@@ -1,7 +1,7 @@
 """
 This module contains Generic Player class and Random Player class.
 """
-import project.game as game
+from .game import Game
 import random
 from typing import Union, List, Tuple
 from abc import ABC, abstractmethod
@@ -16,7 +16,7 @@ class Player(ABC):
         self.letter = letter.upper()
 
     @abstractmethod
-    def get_move(self, game: game.Game) -> Union[List[int], Tuple[int, int]]:
+    def get_move(self, game: Game) -> Union[List[int], Tuple[int, int]]:
         """
         Given current state of the game, return the next move in the form of (x, y) coordinates.
         :param game: Current game state
@@ -37,7 +37,7 @@ class RandomPlayer(Player):
         super().__init__(letter)
 
     def get_move(self, game):
-        move = random.choice(list(game.avail_moves))
+        move = random.choice(game.empty_cells())
         return move
     
     def __str__(self) -> str:

@@ -1,0 +1,816 @@
+Evaluting Tabular q-learning player player
+----- Attack -----
+Test 1: Failed
+   0  1  2  3  4  5  6  7
+0  O  X  X  X  X  -  -  -
+1  O  O  O  O  X  -  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  -  -  -  -  -  -
+4  -  -  -  -  -  -  -  -
+5  -  -  -  -  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (5, 1)
+Optimal  move: [(0, 5)]
+Test 2: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  X  O  O  O  O  -  -  -
+2  X  -  O  O  -  -  -  -
+3  X  X  X  X  O  -  -  -
+4  X  -  -  -  -  -  -  -
+5  -  -  -  -  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (7, 7)
+Optimal  move: [(0, 0), (5, 0)]
+Test 3: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  O  X  -  O  -  -  -  -
+2  -  -  -  O  -  -  O  -
+3  -  -  -  O  -  X  -  -
+4  -  -  X  O  X  -  -  -
+5  -  -  -  X  -  -  -  -
+6  -  -  X  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (5, 4)
+Optimal  move: [(7, 1)]
+Test 4: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  O  X  O  O  -  -  -  -
+2  -  -  O  -  -  -  -  -
+3  -  -  -  X  -  O  -  -
+4  -  -  X  O  X  -  -  -
+5  -  -  -  O  -  X  -  -
+6  -  -  X  -  -  -  X  -
+7  -  -  -  -  -  -  -  -
+Player's move: (7, 5)
+Optimal  move: [(7, 7)]
+Test 5: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  X  X  X  -  -  -  -
+2  -  -  O  -  -  -  -  -
+3  -  -  -  O  O  O  -  -
+4  -  -  -  O  -  -  -  -
+5  -  -  O  -  -  -  -  -
+6  -  O  X  X  X  X  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (4, 5)
+Optimal  move: [(6, 6)]
+Test 6: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  O  -  -  -  -  -
+2  -  -  O  -  -  -  -  -
+3  -  -  O  -  -  X  -  -
+4  -  -  O  -  X  -  -  -
+5  -  -  -  X  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  X  -  -  -  -  -  -
+Player's move: (3, 1)
+Optimal  move: [(6, 2)]
+Test 7: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  -  -  -  -  O  -
+4  -  -  -  -  -  -  O  -
+5  O  X  -  X  X  X  O  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(5, 2)]
+Test 8: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  X  -  O  O  O  O  -  -
+2  -  X  O  -  -  -  -  -
+3  -  -  -  -  -  -  -  -
+4  -  -  -  X  -  -  -  -
+5  -  -  -  X  X  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (0, 0)
+Optimal  move: [(3, 2)]
+Test 9: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  O  -  -  -  -  -
+1  -  -  X  -  -  -  -  -
+2  -  -  X  -  -  -  -  -
+3  -  -  X  O  -  X  -  -
+4  -  -  -  O  O  -  -  -
+5  -  -  X  O  -  -  -  -
+6  -  -  O  -  -  -  -  -
+7  -  X  -  -  -  -  -  -
+Player's move: (4, 7)
+Optimal  move: [(4, 2)]
+Test 10: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  O
+2  -  -  -  -  -  -  X  -
+3  -  -  -  O  O  -  -  -
+4  -  -  -  O  X  -  -  -
+5  -  -  -  X  X  -  -  -
+6  -  -  X  -  -  -  -  -
+7  -  O  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(3, 5)]
+Test 11: Passed
+Test 12: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  X  X  X  -  -  -  -
+3  -  -  O  -  -  -  -  -
+4  -  -  -  O  -  -  -  -
+5  -  -  -  -  O  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (0, 1)
+Optimal  move: [(2, 4), (2, 0)]
+Test 13: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  O  O  -  -  -
+3  -  -  X  -  O  -  -  -
+4  -  -  -  X  -  -  -  -
+5  -  -  -  -  X  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(2, 1), (6, 5)]
+Test 14: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  X  -  -
+3  -  -  -  -  O  X  -  -
+4  -  -  -  O  -  X  -  -
+5  -  -  -  -  O  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(1, 5), (5, 5)]
+Test 15: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  X
+1  -  -  -  -  -  -  O  -
+2  -  -  -  -  -  O  -  -
+3  -  -  -  -  O  -  -  -
+4  -  -  -  O  -  -  -  -
+5  -  -  -  X  X  X  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(5, 2)]
+Test 16: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  O  -
+2  -  -  -  -  -  O  -  -
+3  -  -  X  X  -  X  -  -
+4  -  -  -  O  -  O  -  -
+5  -  -  O  -  X  X  -  -
+6  -  -  -  -  -  X  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(3, 4)]
+Test 17: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  O  -  -
+3  -  -  X  -  O  -  -  -
+4  -  -  -  -  -  O  -  -
+5  -  -  -  -  X  -  -  -
+6  -  -  -  -  -  X  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(4, 3)]
+Test 18: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  X  X  -  -
+3  -  -  -  -  X  -  -  -
+4  -  -  -  -  -  -  -  -
+5  -  -  X  -  O  -  -  -
+6  -  -  -  O  O  O  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(4, 3)]
+Test 19: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  X  -  -
+3  -  -  -  -  O  -  -  -
+4  -  -  -  O  -  X  -  -
+5  -  -  -  -  O  X  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(3, 5)]
+Test 20: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  X  -  -  -  -  -  -
+2  -  X  O  O  O  X  -  -
+3  -  -  -  -  O  -  -  -
+4  -  X  -  O  -  X  -  -
+5  -  -  -  -  X  O  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (1, 0)
+Optimal  move: [(3, 1)]
+Test 21: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  O  O  O  O  X  -
+3  -  X  -  -  O  -  -  -
+4  -  X  -  -  -  X  -  -
+5  -  X  -  -  X  O  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (4, 2)
+Optimal  move: [(2, 1)]
+Test 22: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  O  -  -  -  -  -
+2  -  -  O  X  O  -  -  -
+3  -  -  O  -  -  -  -  -
+4  -  -  -  -  -  -  -  -
+5  -  -  -  -  X  X  X  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 1)
+Optimal  move: [(5, 3)]
+Test 23: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  O  -  -  -  -  -
+2  -  -  O  X  X  -  -  -
+3  -  -  O  -  X  -  -  -
+4  -  -  O  -  -  -  -  -
+5  -  -  -  -  X  O  X  -
+6  -  -  -  -  -  -  -  X
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 1)
+Optimal  move: [(4, 5)]
+Test 24: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  X  X  X  -  -  -
+3  -  -  O  -  X  -  -  -
+4  -  -  O  O  O  -  O  -
+5  -  -  -  -  X  O  X  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (1, 3)
+Optimal  move: [(4, 5)]
+Test 25: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  X  -
+2  -  -  -  -  -  O  O  O
+3  -  -  -  X  -  O  O  -
+4  -  -  -  X  X  O  O  -
+5  -  -  -  X  -  X  O  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(6, 6)]
+Test 26: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  O  O  O  O
+1  -  -  -  -  -  -  O  -
+2  -  -  -  -  -  -  -  -
+3  -  -  -  X  -  -  O  -
+4  -  -  -  X  X  -  O  -
+5  -  -  -  X  X  X  -  -
+6  -  -  -  -  -  -  X  -
+7  -  -  -  -  -  -  -  O
+Player's move: (3, 0)
+Optimal  move: [(2, 2)]
+Test 27: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  O  -  -  -  -  -  -  -
+2  O  X  -  -  -  -  X  -
+3  O  -  X  -  -  O  -  -
+4  -  O  O  X  O  -  -  -
+5  O  X  X  X  X  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 6)
+Optimal  move: [(6, 5), (5, 5)]
+Test 28: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  O  -  -  -  -  -  -  X
+2  O  X  -  -  -  -  X  -
+3  O  -  X  -  -  -  -  -
+4  O  O  O  O  X  -  -  -
+5  X  X  X  X  O  -  -  -
+6  -  -  O  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (0, 5)
+Optimal  move: [(3, 5)]
+Test 29: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  O  X  -  -  -  -  -  -
+3  O  -  X  -  -  -  -  -
+4  O  O  O  X  -  -  -  -
+5  O  X  X  X  X  -  -  -
+6  -  -  O  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (6, 7)
+Optimal  move: [(1, 0), (6, 5), (5, 5)]
+Test 30: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  O  X  X  -  -  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  X  -  -  -  -  -
+4  -  -  O  X  -  -  -  -
+5  -  -  O  O  X  -  -  -
+6  -  -  O  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (6, 1)
+Optimal  move: [(2, 1), (6, 5)]
+----- Defense -----
+Test 1: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  X
+2  O  X  -  -  -  -  X  -
+3  O  O  X  -  -  -  -  -
+4  O  O  O  O  X  -  -  -
+5  X  X  X  X  O  -  -  -
+6  -  -  O  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (6, 7)
+Optimal  move: [(3, 5)]
+Test 2: Failed
+   0  1  2  3  4  5  6  7
+0  O  X  X  X  X  -  -  -
+1  O  O  O  O  X  -  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  -  -  -  -  -  -
+4  -  -  -  -  -  -  -  -
+5  -  -  -  -  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (1, 6)
+Optimal  move: [(0, 5)]
+Test 3: Failed
+   0  1  2  3  4  5  6  7
+0  X  -  O  O  -  -  -  -
+1  X  -  O  O  -  -  -  -
+2  X  -  O  O  -  -  -  -
+3  X  X  X  -  -  -  -  -
+4  -  -  -  -  -  -  -  -
+5  -  -  -  -  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (6, 7)
+Optimal  move: [(4, 0)]
+Test 4: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  O  X  -  X  -  -  -  -
+2  -  -  -  O  -  -  O  -
+3  -  -  -  O  -  X  -  -
+4  -  -  O  O  X  -  -  -
+5  -  -  -  X  -  -  -  -
+6  -  -  X  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (5, 4)
+Optimal  move: [(7, 1)]
+Test 5: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  O  X  O  O  -  -  -  -
+2  -  -  O  -  -  -  -  -
+3  -  -  -  X  -  O  -  -
+4  -  -  X  O  X  -  -  -
+5  -  -  -  O  -  X  -  -
+6  -  -  X  -  -  -  X  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 4)
+Optimal  move: [(7, 7)]
+Test 6: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  X  X  O  -  -  -  -
+2  -  -  O  -  -  -  -  -
+3  -  -  -  O  X  O  -  -
+4  -  -  -  O  -  -  -  -
+5  -  -  O  -  -  -  -  -
+6  -  -  X  X  X  X  O  -
+7  -  -  -  -  -  -  -  -
+Player's move: (0, 2)
+Optimal  move: [(6, 1)]
+Test 7: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  O  -  -  -  -  -
+3  -  -  O  O  -  X  -  -
+4  -  -  O  -  X  -  -  -
+5  -  -  -  X  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  X  -  -  -  -  -  -
+Player's move: (4, 1)
+Optimal  move: [(6, 2)]
+Test 8: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  -  -  -  -  O  -
+4  -  -  -  -  -  -  O  -
+5  O  X  -  X  X  X  O  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(5, 2)]
+Test 9: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  X  -  O  O  O  -  -  -
+2  -  X  O  O  -  -  -  -
+3  -  -  -  -  -  -  -  -
+4  -  -  -  X  -  -  -  -
+5  -  -  -  X  X  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (0, 0)
+Optimal  move: [(3, 2)]
+Test 10: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  O  -  -  -  -  -
+1  -  -  X  -  -  -  -  -
+2  -  -  X  -  -  -  -  -
+3  -  -  X  O  -  X  -  -
+4  -  -  -  O  O  -  -  -
+5  -  -  X  O  -  -  -  -
+6  -  -  O  -  -  -  -  -
+7  -  X  -  -  -  -  -  -
+Player's move: (4, 7)
+Optimal  move: [(4, 2)]
+Test 11: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  O
+2  -  -  -  -  -  -  X  -
+3  -  -  -  O  O  -  -  -
+4  -  -  -  O  X  -  -  -
+5  -  -  -  X  X  -  -  -
+6  -  -  X  -  -  -  -  -
+7  -  O  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(3, 5)]
+Test 12: Passed
+Test 13: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  X  X  X  -  -  -
+3  -  -  O  -  -  -  -  -
+4  -  -  O  O  -  -  -  -
+5  -  -  -  -  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (1, 3)
+Optimal  move: [(2, 1), (2, 5)]
+Test 14: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  O  O  -  -  -
+3  -  -  X  -  O  -  -  -
+4  -  -  -  X  -  -  -  -
+5  -  -  -  -  X  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(2, 1), (6, 5)]
+Test 15: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  X  -  -
+3  -  -  -  -  O  X  -  -
+4  -  -  -  O  O  X  -  -
+5  -  -  -  -  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(1, 5), (5, 5)]
+Test 16: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  O  -  -  -  -
+1  -  -  -  -  O  -  -  -
+2  -  X  -  -  O  O  -  -
+3  -  -  X  -  -  -  -  -
+4  -  -  -  -  -  -  -  -
+5  -  -  X  -  X  -  -  -
+6  -  X  -  -  -  -  -  -
+7  X  -  -  -  -  -  -  -
+Player's move: (3, 5)
+Optimal  move: [(4, 3)]
+Test 17: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  -  -  O
+3  -  -  -  -  -  -  X  -
+4  -  -  -  -  O  X  X  -
+5  -  -  -  -  O  X  -  O
+6  -  -  -  -  O  X  -  -
+7  -  -  -  -  -  X  -  -
+Player's move: (3, 0)
+Optimal  move: [(3, 5)]
+Test 18: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  O  O  -
+3  -  -  -  -  -  X  X  X
+4  -  -  -  -  X  -  -  -
+5  -  O  -  -  -  X  -  -
+6  -  O  -  O  -  -  X  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(3, 4)]
+Test 19: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  O  O  -  -  -
+1  -  -  -  X  X  X  -  -
+2  -  -  X  -  -  -  -  -
+3  -  -  X  -  -  -  -  -
+4  -  -  X  O  -  -  -  -
+5  -  -  -  O  O  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (2, 4)
+Optimal  move: [(1, 2)]
+Test 20: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  X  O  -  -  -  -
+1  -  -  O  X  X  X  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  -  X  -  X  -  -
+4  -  O  X  O  -  -  -  -
+5  -  -  -  O  O  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(2, 4)]
+----- Intelligence -----
+Test 1: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  X  -
+2  -  -  -  -  -  O  -  O
+3  -  -  -  X  -  X  O  -
+4  -  -  -  -  -  O  X  -
+5  -  -  -  X  -  X  O  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(4, 4)]
+Test 2: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  O  -  O
+3  -  X  X  O  -  O  X  -
+4  -  -  -  -  -  X  X  O
+5  -  -  X  X  -  O  O  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(4, 2)]
+Test 3: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  O  -  -  -  O  -
+3  -  O  O  X  -  X  -  -
+4  -  -  X  -  X  -  -  -
+5  -  -  O  X  -  -  -  -
+6  -  -  X  -  -  -  -  -
+7  -  O  -  -  -  -  -  -
+Player's move: (4, 1)
+Optimal  move: [(4, 3)]
+Test 4: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  O  X  -  -  -  -  -
+3  -  O  X  -  -  -  -  -
+4  -  -  -  X  X  -  -  -
+5  -  -  -  O  O  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (4, 6)
+Optimal  move: [(4, 2)]
+Test 5: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  X  O  X  -  -  -
+4  -  X  -  O  -  X  -  -
+5  -  -  -  O  -  -  -  -
+6  -  -  O  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(2, 3)]
+Test 6: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  X  -  X  -  -  -
+4  -  O  -  X  O  O  -  -
+5  -  -  -  X  -  -  -  -
+6  -  -  O  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(3, 3)]
+Test 7: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  X  O  -  -
+3  -  -  -  -  X  O  -  -
+4  -  O  O  -  -  -  -  -
+5  -  X  X  -  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(5, 4)]
+Test 8: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  -  -  -  -  O  -
+4  -  -  -  X  -  -  O  -
+5  -  -  -  X  O  X  O  -
+6  -  -  -  -  -  -  X  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(3, 3)]
+Test 9: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  X  -  -  -  -  -  -
+3  -  -  -  -  -  O  -  -
+4  -  O  X  X  -  -  -  -
+5  -  -  X  O  -  -  -  -
+6  -  -  -  -  -  O  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 3)
+Optimal  move: [(3, 2)]
+Test 10: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  -  X  -
+3  -  -  -  -  X  X  -  -
+4  -  -  -  -  O  O  X  -
+5  -  -  -  -  O  O  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(3, 6)]
+Test 11: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  O  -  -  -  -  -  -  -
+2  -  X  -  -  -  -  X  -
+3  -  O  X  -  -  O  -  -
+4  -  O  O  X  O  -  -  -
+5  O  X  X  X  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 7)
+Optimal  move: [(5, 4)]
+Test 12: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  O  -  -  -  -  -  -  -
+2  -  O  -  -  -  -  -  -
+3  -  O  X  X  -  O  -  -
+4  -  O  O  X  O  -  -  -
+5  X  X  X  -  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (0, 2)
+Optimal  move: [(5, 3)]
+Test 13: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  O  O  O
+2  -  -  -  -  -  O  O  O
+3  -  -  -  -  -  -  -  -
+4  -  -  -  -  -  X  X  X
+5  -  -  -  -  X  -  -  -
+6  -  -  -  -  -  X  -  -
+7  -  -  -  -  -  -  X  -
+Player's move: (3, 0)
+Optimal  move: [(4, 3)]
+Test 14: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  X  -  -  -
+2  -  -  -  O  O  -  -  -
+3  -  -  X  -  O  -  -  -
+4  -  -  O  X  O  -  -  -
+5  -  -  -  -  -  X  X  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(5, 4)]
+Test 15: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  -  -  X  X  O  -
+4  -  -  O  X  O  X  -  -
+5  -  -  O  X  O  O  -  -
+6  -  -  -  -  X  O  -  -
+7  -  -  -  -  -  X  -  -
+Player's move: (3, 0)
+Optimal  move: [(2, 3)]
+Test 16: Passed
+Test 17: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  X  O  -  -  -  -
+3  -  -  -  -  O  O  -  -
+4  -  -  X  -  X  O  O  -
+5  -  X  -  -  -  -  X  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 2)
+Optimal  move: [(3, 3)]
+Test 18: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  X  O  -  -  -  -
+3  -  -  O  -  O  O  -  -
+4  -  -  X  -  X  -  -  -
+5  -  X  -  -  O  X  -  -
+6  X  -  -  -  -  -  O  -
+7  -  -  -  -  -  -  -  -
+Player's move: (4, 3)
+Optimal  move: [(3, 3)]
+Test 19: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  -  -  -  -
+1  -  -  -  -  -  -  -  -
+2  -  -  -  -  -  -  -  -
+3  -  -  -  -  -  -  -  -
+4  -  -  -  O  X  X  -  -
+5  -  -  -  X  O  X  -  -
+6  -  -  -  O  O  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(3, 5)]
+Test 20: Failed
+   0  1  2  3  4  5  6  7
+0  -  -  -  -  X  -  -  -
+1  -  -  -  -  X  O  -  -
+2  -  -  -  -  X  O  -  -
+3  -  -  -  -  -  O  -  -
+4  X  X  X  -  -  -  -  -
+5  -  O  O  O  -  -  -  -
+6  -  -  -  -  -  -  -  -
+7  -  -  -  -  -  -  -  -
+Player's move: (3, 0)
+Optimal  move: [(4, 4)]
+-------------------
+Attack: 1/30
+Defense: 1/20
+Intelligence: 1/20
+Total: 3/70

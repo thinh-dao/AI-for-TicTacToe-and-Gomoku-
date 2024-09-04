@@ -78,6 +78,13 @@ class Game(ABC):
         pass
     
     @abstractmethod
+    def copy(self) -> 'Game':
+        """
+        This function returns a copy of the current game
+        """
+        pass
+    
+    @abstractmethod
     def __str__(self) -> str:
         return "Game"
     
@@ -85,9 +92,8 @@ class TicTacToe(Game):
     def __init__(self):
         #* Initialize board, available moves, last move, and win_combo
         self.board_state = [[None, None, None], [None, None, None], [None, None, None]]
-        self.avail_moves = {(i, j) for j in range(3) for i in range(3)}
-        self.last_move = (-1, -1)
         self.win_combo = []
+        self.curr_player = 'X'
     
     def print_board(self):
         height = len(self.board_state)
@@ -103,7 +109,7 @@ class TicTacToe(Game):
                 elif self.board_state[i][j] == 'O':
                     print('| O ', end='')
                 else:
-                    raise ValueError("Invalid value in the board")
+                    raise ValueError(f"Invalid value {self.board_state[i][j]} in the board")
             print("|")
         print('-------------')
 
@@ -118,28 +124,32 @@ class TicTacToe(Game):
     def empty_cells(self, state = None):
         cells = []
         if state == None:
-            return self.avail_moves # Return the empty cells of current board state
+            state = self.board_state
             
-        for x, row in enumerate(state):
-            for y, cell in enumerate(row):
-                if cell == 0:
+        for x in range(3):
+            for y in range(3):
+                if state[x][y] == None:
                     cells.append([x, y])
         return cells
     
     def valid_move(self, x, y):
-        if (x, y) in self.avail_moves:
+        if self.board_state[x][y] == None:
             return True
         else:
             return False
     
     def set_move(self, x, y, player_letter):
+        assert self.curr_player == player_letter, f"Invalid player {player_letter}. Current player is {self.curr_player}"
         if self.valid_move(x, y):
             self.board_state[x][y] = player_letter
-            self.last_move = (x, y)
-            self.avail_moves.remove([x, y])
+            self.curr_player = 'X' if self.curr_player == 'O' else 'O'
             return True
         else:
             return False
+    
+    def reset_move(self, x, y):
+        self.curr_player = self.board_state[x][y]
+        self.board_state[x][y] = None
 
     def wins(self, player_letter, state=None):
         if state == None:
@@ -165,22 +175,30 @@ class TicTacToe(Game):
         return False
 
     def game_over(self):
-        return self.wins('X') or self.wins('O') or len(self.avail_moves) == 0
+        return self.wins('X') or self.wins('O') or len(self.empty_cells()) == 0
     
     def restart(self):
         self.board_state = [[None, None, None], [None, None, None], [None, None, None]]
-        self.avail_moves = {(i, j) for j in range(3) for i in range(3)}
-        self.last_move = (-1, -1)
         self.win_combo = []
+        self.curr_player = 'X'
+        
+    def copy(self):
+        new_game = TicTacToe()
+        new_game.board_state = [row[:] for row in self.board_state]
+        new_game.win_combo = self.win_combo.copy()
+        new_game.curr_player = self.curr_player
+        return new_game
     
     def __str__(self) -> str:
         return "Tic Tac Toe"
     
 class Gomoku(Game):
     def __init__(self, size=15):  
+        self.size = size
         self.board_state = [[None for _ in range(self.size)] for _ in range(self.size)]
-        self.avail_moves = {(i, j) for j in range(self.size) for i in range(self.size)}
         self.last_move = (-1, -1)
+        self.win_combo = []
+        self.curr_player = 'X'
 
     def print_board(self):
         height = len(self.board_state)
@@ -194,7 +212,7 @@ class Gomoku(Game):
             print("{0:3d}  ".format(i), end='')
             for j in range(width):
                 if self.board_state[i][j] == None:
-                    print('_'.center(6), end='')
+                    print('-'.center(6), end='')
                 elif self.board_state[i][j] == 'X':
                     print('X'.center(6), end='')
                 elif self.board_state[i][j] == 'O':
@@ -202,35 +220,23 @@ class Gomoku(Game):
                 else:
                     raise ValueError("Invalid value in the board")
             print('\n')
-        print('\n')
 
     def init_board(self):
-        height = len(self.board_state)
-        width = len(self.board_state[0])
-
-        print("\nGame board. Type 'row,column' to select move. For example, '0,0' selects top left move.\n\n", end="  ")
-        for x in range(width):
-            print("{0:6d}".format(x), end='')
-        print('\r\n')
-        for i in range(height):
-            print("{0:3d}  ".format(i), end='')
-            for j in range(width):
-                print('_'.center(6), end='')
-            print('\n')
-        print('\n')
+        print("\nType 'row,column' to select move.\n", end="  ")
 
     def empty_cells(self, state=None):
         if state is None:
             state = self.board_state  # Use current state if not provided
+            
         cells = []
         for x in range(self.size):
             for y in range(self.size):
-                if state[x][y] == 0:
+                if state[x][y] == None:
                     cells.append([x, y])
         return cells
 
     def valid_move(self, x, y):
-        return 0 <= x < self.size and 0 <= y < self.size and self.board_state[x][y] == 0
+        return 0 <= x < self.size and 0 <= y < self.size and self.board_state[x][y] == None
 
     def set_move(self, x, y, player_letter):
         if self.valid_move(x, y):
@@ -291,14 +297,24 @@ class Gomoku(Game):
 
     def game_over(self):
         # Check if the game is over (either a player wins or the board is full)
-        return self.wins('X') or self.wins('O') or len(self.avail_moves) == 0
+        return self.wins('X') or self.wins('O') or len(self.empty_cells()) == 0
     
     def restart(self):
-        self.board_state = [[None, None, None], [None, None, None], [None, None, None]]
-        self.avail_moves = {(i, j) for j in range(3) for i in range(3)}
+        self.board_state = [[None for _ in range(self.size)] for _ in range(self.size)]
         self.last_move = (-1, -1)
         self.win_combo = []
+        self.curr_player = 'X'
+    
+    def copy(self):
+        new_game = Gomoku(self.size)
+        new_game.board_state = [row[:] for row in self.board_state]
+        new_game.last_move = self.last_move
+        new_game.win_combo = self.win_combo.copy()
+        new_game.curr_player = self.curr_player
+        return new_game
     
     def __str__(self) -> str:
         return "Gomoku"
+    
+
         

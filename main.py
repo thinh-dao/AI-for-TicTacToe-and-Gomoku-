@@ -16,6 +16,8 @@ if __name__ == '__main__':
     parser.add_argument('--timeout', '-t', type=int, default=10, help='Timeout for each move')
     parser.add_argument('--no_timeout', '-nt', action='store_true', help='No timeout for each move')
     parser.add_argument('--size', '-s', type=int, default=15, help='Size of the board (only for Gomoku)')
+    parser.add_argument('--load', '-l', type=str, default=None, help='Load weight file for Tabular/Approximate Q-Learning Player')
+    parser.add_argument('--no_train', action='store_true', help='No training for Q-Learning Player')
     args = parser.parse_args()
     
     assert args.size >= 5, "Board size must be at least 5x5"
@@ -24,8 +26,35 @@ if __name__ == '__main__':
     
     if args.no_timeout:
         timeout = None
+    else:
+        timeout = args.timeout
+    
+    # Define game and players
+    game = Game(args)
+
+    x_player = Player(args, player=args.player1, letter='X')
+    o_player = Player(args, player=args.player2, letter='O')
+    
+    if 'Q-Learning' in str(x_player):
+        if args.load is not None:
+            valid_size = f'{args.size}x{args.size}'
+            if not args.load.startswith(valid_size):
+                invalid_size = args.load.split('_')[0]
+                raise ValueError(f'The weight file is used for {invalid_size} board, but the board for evaluation is 8x8. Please use the weight file for 8x8 board.')
+            x_player.load_weight(args.load)
+        if args.no_train == False:
+            x_player.train(game)
+
+    if 'Q-Learning' in str(o_player):
+        if args.load is not None:
+            valid_size = f'{args.size}x{args.size}'
+            if not args.load.startswith(valid_size):
+                invalid_size = args.load.split('_')[0]
+                raise ValueError(f'The weight file is used for {invalid_size} board, but the board for evaluation is 8x8. Please use the weight file for 8x8 board.')
+            o_player.load_weight(args.load)
+        if args.no_train == False:
+            o_player.train(game)
         
-    game, (x_player, o_player) = Game(game=args.game), Player(game=args.game, player1=args.player1, player2=args.player2)
     gameplay = GamePlay(x_player=x_player, o_player=o_player, game=game, mode=args.mode, num_games=args.num_games, timeout=timeout)
     gameplay.run()
 
